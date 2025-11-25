@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guagua Global Tracker</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css"/>
+
+<style>
+  * { font-family: "Lato", sans-serif; }
+
+  html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body { display: flex; flex-direction: column; }
+
+  .top-bar {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 14px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    z-index: 9999;
+  }
+
+  #routeSelect, #vehicleSearch {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .newicon {
+    background: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 32px;
+    height: 15px;
+    font-weight: 900;
+    font-size: 11px;
+    text-align: center;
+    line-height: 13px;
+  }
+
+  #map {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+</style>
+
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div>
+    <label for="routeSelect">Route:</label>
+    <select id="routeSelect">
+      <option value="all">All</option>
+    </select>
+  </div>
+
+  <input type="text" id="vehicleSearch" placeholder="Search fleet (e.g. 14*)" />
+
+  <a href="log.html" style="margin-left:15px; font-size:14px;">View Log</a>
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+
+<script src="fleetData.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
